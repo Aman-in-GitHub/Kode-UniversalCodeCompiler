@@ -1,0 +1,16 @@
+{
+  "name": "Kode",
+  "short_name": "Kode",
+  "description": "Universal Code Compiler",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#9ef01a",
+  "theme_color": "#9ef01a",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "320x320",
+      "type": "image/png"
+    }
+  ]
+}
