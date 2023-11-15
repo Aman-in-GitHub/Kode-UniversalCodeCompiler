@@ -203,6 +203,7 @@ function Compiler() {
   const queryClient = useQueryClient();
 
   const { setItem: setLang, getItem: getLang } = useLocalStorage('lang');
+  const { setItem: setWarn, getItem: getWarn } = useLocalStorage('warn');
 
   const [scriptLang, setScriptLang] = useState('');
   const [theme, setTheme] = useState('');
@@ -248,6 +249,16 @@ function Compiler() {
       setLanguage('objectivec');
     } else {
       setLanguage(lang);
+    }
+
+    if (getWarn('warn') == 'Shown') {
+      toast({
+        title: 'Thank You For Your Patience 💚',
+        description:
+          'Compilation maybe a bit slow on the first try but after than it runs smoothly'
+      });
+
+      setWarn('Shown');
     }
   }, []);
 
