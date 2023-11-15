@@ -251,7 +251,7 @@ function Compiler() {
       setLanguage(lang);
     }
 
-    if (getWarn('warn') == 'Shown') {
+    if (getWarn('warn') !== 'Shown') {
       toast({
         title: 'Thank You For Your Patience 💚',
         description:
