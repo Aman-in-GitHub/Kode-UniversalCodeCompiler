@@ -4,8 +4,8 @@
   "description": "Universal Code Compiler",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#9ef01a",
-  "theme_color": "#9ef01a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/logo.png",
