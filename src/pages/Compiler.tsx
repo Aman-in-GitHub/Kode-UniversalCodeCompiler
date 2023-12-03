@@ -429,7 +429,7 @@ function Compiler() {
     }
 
     if (stdinRef.current) {
-      stdinRef.value = '';
+      stdinRef.current.value = '';
     }
 
     if (value == 'nodejs') {
