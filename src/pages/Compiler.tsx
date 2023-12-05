@@ -227,6 +227,33 @@ function Compiler() {
 
     window.addEventListener('resize', updateWindowDimensions);
 
+    async function initialFetch() {
+      try {
+        const requestData = {
+          script: "console.log('Hello World')",
+          language: 'nodejs',
+          stdin: stdinRef.current || null,
+          versionIndex: '0'
+        };
+
+        const response = await axios.post(
+          `https://kode-by-aman.onrender.com/execute`,
+          requestData,
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        );
+
+        return response.data;
+      } catch (error) {
+        throw error;
+      }
+    }
+
+    initialFetch();
+
     return () => {
       window.removeEventListener('resize', updateWindowDimensions);
     };
