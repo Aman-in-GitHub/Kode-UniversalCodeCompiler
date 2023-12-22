@@ -10,7 +10,7 @@ export default function useLocalStorage(key) {
   const getItem = () => {
     try {
       const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : null;
+      return item !== null ? JSON.parse(item) : undefined;
     } catch (error) {
       console.log(error);
     }
