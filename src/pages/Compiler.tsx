@@ -255,7 +255,7 @@ function Compiler() {
       toast({
         title: 'Thank You For Your Patience 💚',
         description:
-          'Compilation maybe a bit slow on the first try but after that it runs smoothly'
+          'Compilation maybe a bit slow for the first time as we are on a free tier'
       });
 
       setWarn('Shown');
