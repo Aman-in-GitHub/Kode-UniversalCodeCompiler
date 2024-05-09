@@ -213,6 +213,30 @@ function Compiler() {
   const stdinRef = useRef('');
   const textAreaRef = useRef(null);
 
+  const [isLive, setIsLive] = useState(false);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://kode-by-aman.onrender.com');
+
+        console.log(response.status);
+
+        setIsLive(true);
+      } catch (error) {
+        console.error('Error:', error);
+        toast({
+          title: 'Sorry for the inconvenience',
+          description:
+            "This site has reached it's monthly spend limit. Please try again later.",
+          duration: 69000
+        });
+      }
+    }
+
+    fetchData();
+  }, []);
+
   useEffect(() => {
     const isLogged = useLocalStorage('isLoggedIn').getItem();
 
@@ -539,7 +563,7 @@ function Compiler() {
             width="100%"
             height="100%"
             showPrintMargin={false}
-            readOnly={language ? false : true}
+            readOnly={isLive && language ? false : true}
             placeholder={
               language
                 ? `Write your ${scriptLang} code here`
@@ -571,6 +595,7 @@ function Compiler() {
           <button
             className="absolute bg-lighter duration-300 hover:bg-lightest active:scale-[.95] lg:top-[50%] lg:translate-y-[-50%] lg:left-[-2rem] z-50 h-12 w-12 lg:h-16 lg:w-16 rounded-full flex items-center justify-center translate-x-[-50%] left-[50%] top-[-1.5rem] lg:translate-x-0"
             onClick={handleRun}
+            disabled={!isLive}
           >
             <Play className="scale-[1.3] lg:scale-[1.5] pl-1 text-white dark:text-black" />
           </button>
