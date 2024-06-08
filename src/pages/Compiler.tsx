@@ -34,7 +34,6 @@ import 'ace-builds/src-noconflict/mode-csharp';
 import 'ace-builds/src-noconflict/mode-cobol';
 import 'ace-builds/src-noconflict/mode-kotlin';
 import 'ace-builds/src-noconflict/mode-dart';
-import 'ace-builds/src-noconflict/mode-sql';
 import 'ace-builds/src-noconflict/mode-objectivec';
 import 'ace-builds/src-noconflict/mode-swift';
 import 'ace-builds/src-noconflict/mode-fortran';
@@ -52,7 +51,6 @@ import 'ace-builds/src-noconflict/snippets/csharp';
 import 'ace-builds/src-noconflict/snippets/cobol';
 import 'ace-builds/src-noconflict/snippets/kotlin';
 import 'ace-builds/src-noconflict/snippets/dart';
-import 'ace-builds/src-noconflict/snippets/sql';
 import 'ace-builds/src-noconflict/snippets/objectivec';
 import 'ace-builds/src-noconflict/snippets/swift';
 import 'ace-builds/src-noconflict/snippets/fortran';
@@ -127,10 +125,6 @@ const languages = [
   {
     value: 'dart',
     label: 'Dart'
-  },
-  {
-    value: 'sql',
-    label: 'SQL'
   },
   {
     value: 'objc',
@@ -351,10 +345,6 @@ function Compiler() {
 
       case 'dart':
         ext = 'dart';
-        break;
-
-      case 'sql':
-        ext = 'sql';
         break;
 
       case 'objc':
